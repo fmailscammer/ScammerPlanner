@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <title>My VueJS App</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>Scammer Planner</h1>
+      <input type="text" v-model="todo">
+      <div v-if="!editingTodo">
+        <input type="submit" value="Add" @click="addTodo">
+      </div>
+      <div v-if="editingTodo">
+        <input type="submit" value="Add" @click="updateTodo">
+      </div>
+      <ol>
+        <li v-for="(todo, index) in todos">
+          {{ todo }}
+          <button @click="editTodo(todo, index)">Edit</button>
+          <button @click="deleteTodo(index)">Delete/Done</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+
+</html>

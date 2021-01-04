@@ -1,0 +1,13 @@
+/* Basic stuff for root */
+:root {
+  font-family: sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+button, button-counter {
+  background-color: #888;
+  color: #000;
+  border: 3px #444 solid;
+  border-radius: 5px;
+}
